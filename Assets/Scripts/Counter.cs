@@ -15,6 +15,7 @@ public class Counter : MonoBehaviour
 
     private bool _isCounterActive = false;
 
+    public event Action StatusChanged;
     public event Action ValueChanged;
 
     public float ValueCounter => _valueCounter;
@@ -38,14 +39,16 @@ public class Counter : MonoBehaviour
     private void ChangeJobsCounter()
     {
         if (_isCounterActive == false)
-        {
+        {   
             _coroutine = StartCoroutine(EnumerateCounterValue());
+            StatusChanged?.Invoke();
             _isCounterActive = true;
             Debug.Log("The counter has started");
         }
         else
         {
             StopCoroutine(_coroutine);
+            StatusChanged?.Invoke();
             _isCounterActive = false;
             Debug.Log("The counter has stopped");
         }

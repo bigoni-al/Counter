@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class StatusCounter : MonoBehaviour
 {
-    [SerializeField] private CounterButton _counterButton;
     [SerializeField] private Counter _counter;
 
     private TextMeshProUGUI _textStatus;
@@ -19,12 +18,12 @@ public class StatusCounter : MonoBehaviour
 
     private void OnEnable()
     {
-        _counterButton.ButtonPushed += DisplayCounterStatus;
+        _counter.StatusChanged += DisplayCounterStatus;
     }
 
     private void OnDisable()
     {
-        _counterButton.ButtonPushed -= DisplayCounterStatus;
+        _counter.StatusChanged -= DisplayCounterStatus;
     }
 
     private void DisplayCounterStatus()
