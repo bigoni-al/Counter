@@ -580,6 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _counterButton: {fileID: 1052609397}
+  _counter: {fileID: 122769521}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

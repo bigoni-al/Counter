@@ -18,6 +18,7 @@ public class Counter : MonoBehaviour
     public event Action ValueChanged;
 
     public float ValueCounter => _valueCounter;
+    public bool IsCounterActive => _isCounterActive;
 
     private void Awake()
     {
