@@ -26,6 +26,6 @@ public class CounterButton : MonoBehaviour
     private void OnButtonPushed()
     {
         ButtonPushed?.Invoke();
-        Debug.Log("—чЄтчик кликнули");
+        Debug.Log("Counter pushed");
     }
 }
